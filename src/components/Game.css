@@ -1,0 +1,99 @@
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  padding: 1rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.score {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+}
+
+.score h2 {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin: 0;
+  white-space: nowrap;
+  color: #ecf0f1;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.reset-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 90px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.reset-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reset-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .game-container {
+    padding: 0.5rem;
+  }
+
+  .choices {
+    margin: 0.5rem 0;
+  }
+
+  .choice-button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 360px) {
+  .choice-button {
+    width: 55px;
+    height: 55px;
+    margin: 0 4px;
+  }
+
+  .emoji {
+    font-size: 1.6rem;
+  }
+
+  .reset-btn {
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+  }
+}

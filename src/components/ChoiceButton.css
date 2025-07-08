@@ -1,0 +1,83 @@
+.choice-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #2c3e50;
+  border: 4px solid #34495e;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  margin: 0 10px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.choice-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.choice-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #4a6b8a;
+}
+
+.choice-button:active,
+.choice-button.active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: #34495e;
+}
+
+.choice-button:active::after,
+.choice-button.active::after {
+  transform: scale(1);
+  opacity: 0;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  transition: transform 0.2s;
+}
+
+.choice-button:hover .emoji {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .choice-button {
+    width: 70px;
+    height: 70px;
+    margin: 0 8px;
+  }
+
+  .emoji {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .choice-button {
+    width: 60px;
+    height: 60px;
+    margin: 0 6px;
+    border-width: 3px;
+  }
+
+  .emoji {
+    font-size: 1.8rem;
+  }
+}
